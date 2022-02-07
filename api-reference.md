@@ -10,16 +10,20 @@ Identify geographical location based on IP (IPv4 or IPv6)
   The actuall geolocation data are provided using the [ipinfo.io](https://ipinfo.io) REST web service
   Results are stored in a local cache (table) and used for subsequent queries (10x - 100x faster)
 
-  While you can evaluate this API without access token you will to sign up [ipnfo.io](https://ipinfo.io/pricing) to obtain unique access token.
-  The free plan includes up to 50k lookups per month
+  While you can evaluate this API without access token you should sign up [ipnfo.io](https://ipinfo.io/pricing) to obtain an access token.
+  Their free plan includes up to 50k lookups per month
 
   ```
-  sql> select ip2geo.get_country('8.8.8.8') from dual;
+  sql> select ip2geo.get_country('8.8.8.8') from dual;                    -- using the limited annonymous access
+  sql> select ip2geo.get_country('8.8.8.8', '<access token>') from dual;  -- using the ipinfo.io access token
   ```  
 
-  For Oracle Autonomous Database the HTTPS must be enabled
+  By default the API is using HTTPS. The trusted root certificate for ipinfo.io has to be added to Oracle Wallet and configured in APEX / Instance / .
+  Oracle Autonomous Database and apex.oracle.com provides this out of the box.
+  
+  Alternativelly non secure HTTP connection can be forced:
   ```
-  sql> select ip2geo.get_country(p_ip => '8.8.8.8', p_use_https => 1) from dual;
+  sql> select ip2geo.get_country(p_ip => '8.8.8.8', p_use_https => 0) from dual;
   ```
 
   Author:     Jan Navratil
@@ -107,14 +111,14 @@ function get_geo(
 
 ## Procedure configure
 
-Sets API configuration parameters for a session duration (not persisted)  
+Set configuration parameters for a session duration (not persisted) instead of passing them with eacho API call
   
   #### p_access_token
 
   Unique access token ([ipinfo.io](https://ipinfo.io))
 
   #### p_use_https
-
+  
   Must be enabled for Oracle Authonomous Database. 
   Optional for self managed database. Oracle Wallet must be configured for https://ipinfo.io/ then
 
@@ -129,8 +133,8 @@ SIGNATURE
 ```sql
 procedure configure(
     p_access_token in varchar2 default null,
-    p_use_https    in number default null,
-    p_use_cache    in number default null
+    p_use_https    in number default 1,
+    p_use_cache    in number default 1
   );
 ```
 

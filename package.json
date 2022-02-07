@@ -1,0 +1,23 @@
+{
+    "name" : "navratil/ip2geo",
+    "version" : "1.0.0",
+  
+    "dependencies" : [ 
+      { 
+        "oracle/db" : ">=18.0",
+        "oracle/apex" : ">=18.0"
+      } 
+    ],
+      
+    "install"   : "install.sql",
+    "upgrade"   : "upgrade.sql",
+    "uninstall" : "uninstall.sql",
+      
+    "description" : "Identify geographical location based on IP",
+    "license": "MIT",
+    "homepage" : "https://github.com/navratil/ip2geo",
+    "keywords" : [ "geo", "location", "country", "ip", "fraud" ],
+    "author" : "Jan Navratil",
+    "contributors" : []
+    
+  }

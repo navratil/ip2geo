@@ -1,5 +1,7 @@
 ## Package ip2geo
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo) 
+
 Geo-location PL/SQL API to identify geographical location based on IP for Oracle database 
 
 Pinpoint your users locations, customize their experiences, prevent fraud and ensure compliance

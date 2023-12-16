@@ -16,8 +16,10 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Checkout ip2geo source
         uses: actions/checkout@v4
+      - name: List ip2geo source
+        run: ls -l
       - name: Install ip2geo
-        run: sql ${{ secrets.APP_USER }}/${{ secrets.APP_USER_PASSWORD }}@localhost/FREEPDB1 install.sql
+        run: sql ${{ secrets.APP_USER }}/${{ secrets.APP_USER_PASSWORD }}@localhost/FREEPDB1 ./install.sql
       - name: Test ip2geo
         run: |
            echo "select ip2geo.get_country('8.8.8.8);" \ 

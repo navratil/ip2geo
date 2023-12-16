@@ -7,8 +7,8 @@ jobs:
     steps: 
       - uses: gvenzl/setup-oracle-free@v1
         with:
-          app-user: {{ secrets.APP_USER }}
-          app-user-password: {{ secrets.APP_USER_PASSWORD }}
+          app-user: ${{ secrets.APP_USER }}
+          app-user-password: ${{ secrets.APP_USER_PASSWORD }}
       - uses: gvenzl/setup-oracle-sqlcl@v1
       # connect to the database
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -16,7 +16,7 @@ jobs:
       - name: Run SQLcl
         run: |
            echo 'select sysdate from dual;' \ 
-           | sql {{ secrets.APP_USER }}/{{ secrets.APP_USER_PASSWORD }}@localhost/FREEPDB1
+           | sql ${{ secrets.APP_USER }}/${{ secrets.APP_USER_PASSWORD }}@localhost/FREEPDB1
       - run: echo "🍏 This job's status is ${{ job.status }}."
          
      

@@ -9,7 +9,7 @@ jobs:
         with:
           app-user: {{ secrets.APP_USER }}
           app-user-password: {{ secrets.APP_USER_PASSWORD }}
-      - uses: gvenzlsetup-oracle-sqlcl@v1
+      - uses: gvenzl/setup-oracle-sqlcl@v1
       # connect to the database
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."

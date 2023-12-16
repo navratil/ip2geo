@@ -14,7 +14,7 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Run SQLcl
-         run: |
+        run: |
            echo 'select sysdate from dual;' \ 
            | sql {{ secrets.APP_USER }}/{{ secrets.APP_USER_PASSWORD }}@localhost/FREEPDB1
       - run: echo "🍏 This job's status is ${{ job.status }}."

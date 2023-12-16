@@ -9,7 +9,7 @@ jobs:
         with:
           app-user: ${{ secrets.APP_USER }}
           app-user-password: ${{ secrets.APP_USER_PASSWORD }}
-          setup-scripts: ./datamodel
+#          setup-scripts: ./datamodel
       - uses: gvenzl/setup-oracle-sqlcl@v1
       # connect to the database
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."

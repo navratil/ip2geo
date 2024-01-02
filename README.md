@@ -1,6 +1,6 @@
 ## Package ip2geo
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo) 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=coverage)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo) [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=navratil_ip2geo&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=navratil_ip2geo)
 
 Geo-location PL/SQL API to identify geographical location based on IP for Oracle database 
 
